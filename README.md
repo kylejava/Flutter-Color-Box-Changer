@@ -1,6 +1,6 @@
-# colorbox
+# Colorbox
 
-A new Flutter application.
+This Flutter application is for an "Intro To Flutter" workshop hosted at DSC @ CSUSM
 
 ## Getting Started
 

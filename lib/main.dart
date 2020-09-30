@@ -4,6 +4,12 @@ void main() {
   runApp(MyApp());
 }
 
+/*
+  The Box Class is wrapped in a stateless widget
+
+ */
+
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,13 +34,29 @@ class Box extends StatefulWidget {
 }
 
 class _BoxState extends State<Box> {
+  /*
+    _colors is a list of the colors the user cycles through when the button is pressed
+    i represents the index of the _colors list
+
+  */
 
   var _colors = [Colors.red, Colors.blue, Colors.yellow, Colors.green, Colors.orange];
   var i = 0;
+
+  /*
+    Inside the padding widget is a Column widget that contains the Colored Box and a row of buttons
+    The SizedBox widget is used in order to add spacing
+   */
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsets.all(50.0),
+      /*
+        In the Column Widget is a couple of widgets wrapped in it.
+        The Container widget represents the actual box that changes color
+        the Center widget contains a Row widget that holds the buttons to change the color of the box
+       */
       child: Column(
         children: [
           Container(
@@ -46,7 +68,6 @@ class _BoxState extends State<Box> {
               children: [
                 FlatButton.icon(
                   onPressed: () {
-
                     i =i - 1;
                     if(i < 0){
                       i = _colors.length - 1;
@@ -54,7 +75,6 @@ class _BoxState extends State<Box> {
                     setState(() {
                       _colors[i];
                     });
-
                   },
                   icon: Icon(Icons.arrow_back),
                   label: Text(''),
